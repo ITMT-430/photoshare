@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<title>IIT Photoshare Site</title>
+</head>
+<body>
+
+    <div class="main-header">
+        
+	
+	<img src="HawkLogo.png"alt="Website logo" href="index.html"></img>
+	
+		<h2>HAWKSTAGRAM</h2><br/>
+		<h3>Where hawks share pictures</h3>
+		<button ><a href ='signin.html'>Sign IN</a></button>
+		
+	
+   </div>
+   
+       
+        <!--Got button--->
+        <!--<input type="text" placeholder="USERNAME" class="login" >
+        <input type="password" placeholder="PASSWORD" class="login">
+        <button type="submit" value="LOGIN" id="login_btn">Login</button>
+        <button type="submit" value="SignUp" id="register_btn">Sign-Up</button>
+        -->
+  <form id="searchbox" action="">
+    	<input id="search" type="text" placeholder="Type here">
+   	 <input id="submit" type="submit" value="Search">
+  </form>
+
+    
+  <div id="category">
+	<h2>Categories:</h2>
+	<ul>
+    	<li><a href="#"><img src="campus.jpg" /></a></li>
+    	<li><a href="#"><img src="graduation.jpg" /></a></li>
+    	<li><a href="#"><img src="event.jpg" /></a></li>
+    	<li><a href="#"><img src="sports.jpg" /></a></li>
+    	<li><a href="#"><img src="international.jpg" /></a></li>
+    
+    	
+  </ul>
+</div>
+		
+  </div>
+	
+  <div id="footer">
+  	<nav>
+ 		 <ul>
+   		 <li><a href="signin.html">SignIn</a></li>
+    		 <li class="active"><a href="#searchbox">Search</a></li>
+    		 <li><a href="#">Suggestions</a></li>
+    		 <li><a href="#">Team Members</a></li>
+  		 </ul>
+	</nav>
+	
+  
+
+  	<div class="Copyright">
+		<p>&copy; Hawkstagram.com<p>
+  	</div>
+  </div>
+
+</body>
+<script>
+	var btn_signin = document.getElementById('sign_in');
+	btn_signin.addEventListener('click', function(){
+	document.location = 'signin.html';
+	
+	}
+
+
+</script>
+</html>

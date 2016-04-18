@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<title>IIT Photoshare Site</title>
+</head>
+<body>
+
+    <div class="main-header">
+        
+	
+	<img src="HawkLogo.png"alt="Website logo" href="index.html"></img>
+	
+		<h2>HAWKSTAGRAM</h2>
+		<h3>Where hawks share pictures</h3>
+
+   </div>
+        <!--<input type="text" placeholder="USERNAME" class="login" >
+        <input type="password" placeholder="PASSWORD" class="login">
+        <button type="submit" value="LOGIN" id="login_btn">Login</button>
+        <button type="submit" value="SignUp" id="register_btn">Sign-Up</button>
+        -->
+ 
+  <button id="btn_signin">SIGN IN</button>
+	
+	
+	<div id="sign_in"></div>
+	<input type="file" id="file">
+	<div id="output"></div>
+	
+	    <div id="category">
+		
+		<button>Graduation</button>
+		<button>Events</button>
+		<button>Campus</button>
+		<button>International Students</button>
+		<button>Sports</button>
+		<button>Student Life</button>
+		<button>IPRO</button>
+		<button>Armour College of Engineering</button>
+		<button>Chicago-Kent College of Law</button>
+		<button>College of Architecture</button>
+		<button>College of Science</button>
+		<button>Institute of Design</button>
+		<button>Institute for Food Safety and Health</button>
+		<button>Lewis College of Human Sciences</button>
+		<button>Pritzker Institute of Biomedical Science and Engineering</button>
+		<button>School of Applied Technology</button>
+		<button>Stuart School of Business</button>
+		<button>WISER</button>
+		
+    </div>
+
+<script>
+ var sign = document.getElementById('btn_signin');
+ 
+ sign.addEventListener('click', function(){
+ 
+	document.getElementById('sign_in').innerHTML = '<h1>SIGN IN</h1>' +
+										'<form> <label for="name">Name</label>' +
+						'<input type= "text" id="first_name" placeholder = " John">' +
+						'<label for="email">Email Address (required) </label>'+
+				'<input type= "text" id="email" placeholder = " your@email.com">'+
+			'<button id = "button_submit">Submit</button>' +'</form>';
+ 
+ });
+		function handleFileSelect(evt) {
+			var fileList = evt.target.files;
+			console.log(fileList);
+
+			for (var i = 0; i < fileList.length; i++) {
+				//fileList[i]
+				if (fileList[i].type.match('image.*')) {
+					renderImage(fileList[i]);
+				}
+			};
+		}
+				function renderImage(aFile){
+			var reader = new FileReader();
+			reader.onload = function(evt){
+				var outputDiv = document.getElementById('output');
+				console.log(evt);
+				var dataUrl = evt.target.result;
+
+				var img = document.createElement('img');
+				img.src = dataUrl;
+				img.height = '200';
+				outputDiv.appendChild(img);
+			};
+			reader.readAsDataURL(aFile);
+		}
+
+		document.getElementById('file').addEventListener('change', handleFileSelect, false);
+
+
+</script>
+	
+  <div id="footer">
+  	<nav>
+ 		 <ul>
+   		 <li><a href="signin.html">SignIn</a></li>
+    		 <li class="active"><a href="index.html">Search</a></li>
+    		 <li><a href="#">Suggestions</a></li>
+    		 <li><a href="#">Team Members</a></li>
+  		 </ul>
+	</nav>
+	
+  
+
+  	<div class="Copyright">
+		<p>&copy; Hawkstagram.com<p>
+  	</div>
+  </div>
+</body>
+</html>
