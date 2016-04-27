@@ -7,7 +7,14 @@
 
     phpCAS::setDebug();
     phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
-    // #TODO MAKE SURE TO DO SERVER VALIDATION WITH CERT
+
     phpCAS::setNoCasServerValidation();
-    //phpCAS::setCasServerCACert($cas_server_ca_cert_path);
+    //phpCAS::setCasServerCACert($cas_server_ca_cert_path); // #TODO MAKE SURE TO DO SERVER VALIDATION WITH CERT
+
+    if(isset($_GET['signin'])&& !phpCAS::isAuthenticated()){
+        phpCAS::forceAuthentication();
+    }
+    elseif(isset($_GET['signout'])) {
+        phpCAS::logout();
+    }
 ?>

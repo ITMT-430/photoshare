@@ -6,6 +6,23 @@
     if(!phpCAS::isAuthenticated()) {
         phpCAS::forceAuthentication();
     }
+
+    if(isset($_FILES['image'])) {
+        $image = new Image();
+        #TODO validate/secure user submitted data
+        $image->name = $_POST['image_name'];
+        $image->uid = phpCAS::getUser();
+
+        if($errors = $image->create($_FILES['image']) === true) {
+            foreach($_POST['categories'] as $category) {
+                $image->addTag($category);
+            }
+            echo "<script>window.location = \"http://localhost/photoshare/view.php?photo=$image->image_id\";</script>";
+        }
+        else {
+            print_r($errors);
+        }
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,29 +67,6 @@ s
 <h1>Welcome <?php /*echo $login_session; */?></h1>
 <h2><a href = "index.html">Sign Out</a></h2>-->
 
-
-
-<?php
-//echo '<pre>';
-//print_r($_FILES);
-//die();
-if(isset($_FILES['image'])) {
-    $image = new Image();
-    $image->name = 'wow';
-    $image->uid = phpCAS::getUser();
-
-    if($errors = $image->create($_FILES['image']) === true) {
-        foreach($_POST['categories'] as $category) {
-            $image->addTag($category);
-        }
-//        #TODO maybe redirect to image page?
-        die('okay it worked');
-    }
-    else {
-        print_r($errors);
-    }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -6,12 +6,6 @@
  * Time: 6:04 PM
  */
 require_once('cas_setup.php');
-var_dump(phpCAS::isAuthenticated());
-if(isset($_GET['signin'])&& !phpCAS::isAuthenticated()){
-  phpCAS::forceAuthentication();
-}
-
-
 
 ?>
 <!DOCTYPE html>
@@ -43,20 +37,32 @@ if(isset($_GET['signin'])&& !phpCAS::isAuthenticated()){
 	<div>
 		<div id="center">
 			<div class="wrapper">
+
+
         <h2>Where Illinois Tech Hawks share pictures</h2>
         <p>Here students can upload,search,organize, and share your pictures.	</p>
         <?php
         if(phpCAS::isAuthenticated()){
-          echo '<input type="button" value="'.phpCAS::getUser().'"/>';
+         echo 'Welcome, Upload Your Pictures Here!';
+
         }
         else {
           echo '<a href="index.php?signin=true"><input type="button" value="SIGN IN" id="big_signin" /></a>';
         }
         ?>
 
+        <?php
+        if(phpCAS::isAuthenticated()){
+          echo '<a href="upload.php">Upload Picture</a>';
+
+        }
+        ?>
+
       </div>
 		</div>
 	</div>
+
+
 
 
   <form id="searchbox" action="">
