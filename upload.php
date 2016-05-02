@@ -13,14 +13,14 @@
         $image->name = $_POST['image_name'];
         $image->uid = phpCAS::getUser();
 
-        if($errors = $image->create($_FILES['image']) === true) {
+        $errors = $image->create($_FILES['image']);
+        if($errors === true) {
+
             foreach($_POST['categories'] as $category) {
                 $image->addTag($category);
             }
             echo "<script>window.location = \"http://localhost/photoshare/view.php?photo=$image->image_id\";</script>";
-        }
-        else {
-            print_r($errors);
+            die();
         }
 }
 ?>
@@ -101,6 +101,13 @@ s
         <div id="output"></div>
 
         <h2>Please choose the Category</h2>
+        <?php
+            if(is_array($errors)) {
+                echo '<div id="errors">There was an error in your upload:<ul>';
+                foreach($errors as $error) echo "<li>$error</li>";
+                echo '</ul></div>';
+            }
+        ?>
         <ul id="category" class="category_buttons">
 
             <li><input type="checkbox" name="categories[]" value="graduation">Graduation</li>

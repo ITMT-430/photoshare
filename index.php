@@ -14,6 +14,7 @@ require_once('cas_setup.php');
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="lightbox/lightbox2-master/dist/css/lightbox.min.css">
 	<title>IIT Photoshare Site</title>
 </head>
 
@@ -22,13 +23,15 @@ require_once('cas_setup.php');
 	<div class="main-header" id="banner">
 		<h1 id="hawkstagram"><span>Hawks</span>tagram</h1>
 		<div>
-      <img src="search-icon-white.png" alt="search_icon" id="search" />
+      <img src="images/search-icon-white.png" alt="search_icon" id="search" />
+
+
       <?php
       if(phpCAS::isAuthenticated()){
         echo '<input type="button" value="'.phpCAS::getUser().'"/>';
       }
       else {
-        echo '<a href="index.php?signin=true"><input type="button" value="SIGN IN" id="big_signin" /></a>';
+        echo '<a href="index.php?signin=true"><input type="button" value="SIGN IN" id="signin" /></a>';
       }
       ?>
     </div>

@@ -20,12 +20,14 @@ $image->get();
 <?php
 //this checks to see if the person viewing the image is logged in as the user who uploaded the image
 if(phpCAS::isAuthenticated() && phpCAS::getUser() == $image->uid) {
-    echo '<button>DELETE IMAGE</button>';
+    echo '<form method="get" action="delete_image.php" onsubmit="return confirm(\'Are you sure you want to delete this image?\')">
+    <button type="submit">DELETE IMAGE</button>
+    <input type="hidden" name="image_id" value="'.$_GET['photo'].'"/></form>';
 }
 
 echo '<ul id="tags">';
 foreach($image->tags as $tag) {
-    echo "<li>$tag</li>";
+    echo "<li>$tag->category</li>";
 }
 echo '</ul>';
 ?>

@@ -13,7 +13,8 @@
             $file_size = $fileArray['size'];
             $file_tmp = $fileArray['tmp_name'];
             $file_type = $fileArray['type'];
-            $file_ext = strtolower(end(explode('.',$fileArray['name'])));
+            $tmp = explode('.',$fileArray['name']);
+            $file_ext = strtolower(end($tmp));
 
             $expensions= array("jpeg","jpg","png");
 
@@ -22,7 +23,7 @@
             }
 
             if($file_size > 2097152){
-                $errors[]='File size must be excately 2 MB';
+                $errors[]='File size must not exceed 2 MB';
             }
 
             return $errors;
@@ -56,7 +57,6 @@
 
         function get() {
             global $db;
-            if(!is_int($this->image_id)) throw new Exception('Image must be initialized with an image');
             $query = "SELECT * FROM `images_table` WHERE `image_ID`=".$this->image_id;
             $result = $db->query($query);
             $result = $result->fetch_assoc();
@@ -72,6 +72,12 @@
             $tag->image_id = $this->image_id;
             $tag->category = $category;
             $tag->create();
+        }
+
+        function delete() {
+            global $db;
+            $query = "DELETE FROM `images_table` WHERE `image_ID`=$this->image_id";
+            $db->query($query);
         }
 
 
@@ -94,7 +100,10 @@ class Tag {
         $result = $result->fetch_all();
         $return = array();
         foreach($result as $tag) {
-            $return[] = $tag[0];
+            $t = new Tag();
+            $t->category = $tag[0];
+            $t->image_id = $image_id;
+            $return[] = $t;
         }
         return $return;
     }

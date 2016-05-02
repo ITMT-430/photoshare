@@ -8,8 +8,4 @@
 
 require_once('cas_setup.php');
 
-
-
-
-
 ?>

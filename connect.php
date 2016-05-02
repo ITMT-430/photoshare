@@ -6,7 +6,7 @@
  * Time: 10:22 PM
  */
 
-<<<<<<< HEAD
+
   $server = "localhost";
   $username = "root";
   $password = "";
@@ -19,12 +19,11 @@
     die("Connection failed: " . $connection->connect_error);
   }
   echo "Connected successfully";
-=======
+
   mysqli_connect("localhost",
     "root", "")
   or die("<p>Error connecting to database: " .
     mysqli_error() . "</p>");
->>>>>>> 6229a0b6cd1298c7c6b84c26b1eca12c7f081d79
 
   echo "<p>Connected to MySQL!</p>";
 
@@ -46,7 +45,7 @@
     echo "<li>Table: {$row[0]}</li>";
   }
   echo "</ul>";
-<<<<<<< HEAD
+
 ?>
 
 <html>
@@ -70,6 +69,5 @@
 <div id="footer"></div>
 </body>
 </html>
-=======
-?>
->>>>>>> 6229a0b6cd1298c7c6b84c26b1eca12c7f081d79
+
+
