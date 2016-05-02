@@ -9,13 +9,13 @@ if(phpCAS::isAuthenticated() && phpCAS::getUser() == $image->uid) {
     $image->delete();
     echo 'Image has been deleted. You will be redirected home in 10 seconds';
     echo '<script>window.setTimeout(function(){
-        window.location = "http://localhost/photoshare/";
+        window.location = "https://ada040.rice.iit.edu";
     },10000);</script>';
 }
 else {
     echo 'You must be authenticated as the user who uploaded the image to delete it.<br/>You will be redirected home in 10 seconds';
     echo '<script>window.setTimeout(function(){
-        window.location = "http://localhost/photoshare/";
+        window.location = "https://ada040.rice.iit.edu";
     },10000);</script>';
 }
 ?>
