@@ -19,7 +19,7 @@
             foreach($_POST['categories'] as $category) {
                 $image->addTag($category);
             }
-            echo "<script>window.location = \"http://localhost/photoshare/view.php?photo=$image->image_id\";</script>";
+            echo "<script>window.location = \"https://ada040.rice.iit.edu/view.php?photo=$image->image_id\";</script>";
             die();
         }
 }
@@ -68,7 +68,7 @@
     <div class="container">
         <div id="output"></div>
 
-<<<<<<< HEAD
+
         <h2>Please choose the Category</h2>
         <?php
             if(is_array($errors)) {
@@ -77,30 +77,7 @@
                 echo '</ul></div>';
             }
         ?>
-        <ul id="category" class="category_buttons">
-
-            <li><input type="checkbox" name="categories[]" value="graduation">Graduation</li>
-            <li><input type="checkbox" name="categories[]" value="events">Events</li>
-            <li><input type="checkbox" name="categories[]" value="campus">Campus</li>
-            <li><input type="checkbox" name="categories[]" value="international students">International Students</li>
-            <li><input type="checkbox" name="categories[]" value="sports">Sports</li>
-            <li><input type="checkbox" name="categories[]" value="student life">Student Life</li>
-            <li><input type="checkbox" name="categories[]" value="ipro">IPRO</li>
-            <li><input type="checkbox" name="categories[]" value="engineering">Armour College of Engineering</li>
-            <li><input type="checkbox" name="categories[]" value="kent_law">Chicago-Kent College of Law</li>
-            <li><input type="checkbox" name="categories[]" value="arch">College of Architecture</li>
-            <li><input type="checkbox" name="categories[]" value="science">College of Science</li>
-            <li><input type="checkbox" name="categories[]" value="design">Institute of Design</li>
-            <li><input type="checkbox" name="categories[]" value="food_safety">Institute for Food Safety and Health</li>
-            <li><input type="checkbox" name="categories[]" value="humanities">Lewis College of Human Sciences</li>
-            <li><input type="checkbox" name="categories[]" value="biomedical">Pritzker Institute of Biomedical Science and Engineering</li>
-            <li><input type="checkbox" name="categories[]" value="sat">School of Applied Technology</li>
-            <li><input type="checkbox" name="categories[]" value="stuart">Stuart School of Business</li>
-            <li><input type="checkbox" name="categories[]" value="wiser">WISER</li>
-
-        </ul>
-
-	<h2>Please choose the Category</h2>
+        
 	    <div id="category" class="category_buttons">
 
 		<div><input type="checkbox" name="categories[]" value="graduation">Graduation</div>
