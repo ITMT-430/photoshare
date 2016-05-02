@@ -2287,3 +2287,44 @@ CEBB .|    -
 353C .|    |    |    -
 353C .|    |    -
 353C .|    -
+CF0C .START phpCAS-1.3.2 ****************** [CAS.php:450]
+CF0C .=> phpCAS::client('2.0', 'mytest107.iit.edu', 443, '/cas') [cas_setup.php:9]
+CF0C .|    => CAS_Client::__construct('2.0', false, 'mytest107.iit.edu', 443, '/cas', true) [CAS.php:345]
+CF0C .|    |    Starting a new session [Client.php:792]
+CF0C .|    <= ''
+CF0C .<= ''
+CF0C .=> phpCAS::setNoCasServerValidation() [cas_setup.php:11]
+CF0C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+CF0C .<= ''
+CF0C .=> phpCAS::isAuthenticated() [index.php:33]
+CF0C .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+CF0C .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+CF0C .|    |    |    no user found [Client.php:1375]
+CF0C .|    |    <= false
+CF0C .|    |    no ticket found [Client.php:1258]
+CF0C .|    <= false
+CF0C .<= false
+CF0C .=> phpCAS::isAuthenticated() [index.php:51]
+CF0C .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+CF0C .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+CF0C .|    |    |    no user found [Client.php:1375]
+CF0C .|    |    <= false
+CF0C .|    |    no ticket found [Client.php:1258]
+CF0C .|    <= false
+CF0C .<= false
+CF0C .=> phpCAS::isAuthenticated() [index.php:61]
+CF0C .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+CF0C .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+CF0C .|    |    |    no user found [Client.php:1375]
+CF0C .|    |    <= false
+CF0C .|    |    no ticket found [Client.php:1258]
+CF0C .|    <= false
+CF0C .<= false
+CF0C .=> phpCAS::isAuthenticated() [index.php:120]
+CF0C .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+CF0C .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+CF0C .|    |    |    no user found [Client.php:1375]
+CF0C .|    |    <= false
+CF0C .|    |    no ticket found [Client.php:1258]
+CF0C .|    <= false
+CF0C .<= false

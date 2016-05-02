@@ -99,10 +99,10 @@
             <li><input type="checkbox" name="categories[]" value="wiser">WISER</li>
 
         </ul>
-=======
+
 	<h2>Please choose the Category</h2>
 	    <div id="category" class="category_buttons">
-		
+
 		<div><input type="checkbox" name="categories[]" value="graduation">Graduation</div>
 		<div><input type="checkbox" name="categories[]" value="events">Events</div>
 		<div><input type="checkbox" name="categories[]" value="campus">Campus</div>
@@ -121,8 +121,8 @@
 		<div><input type="checkbox" name="categories[]" value="sat">School of Applied Technology</div>
 		<div><input type="checkbox" name="categories[]" value="stuart">Stuart School of Business</div>
 		<div><input type="checkbox" name="categories[]" value="wiser">WISER</div>
-		
->>>>>>> 071712f7a129b1051f7114f1b3368a71ebd018d0
+
+
     </div>
         <button type="submit" id="submit_upload">SUBMIT</button>
 </form>
