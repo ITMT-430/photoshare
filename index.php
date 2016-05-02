@@ -24,8 +24,11 @@ require_once('cas_setup.php');
 		<h1 id="hawkstagram"><span>Hawks</span>tagram</h1>
 		<div>
       <img src="images/search-icon-white.png" alt="search_icon" id="search" />
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 071712f7a129b1051f7114f1b3368a71ebd018d0
       <?php
       if(phpCAS::isAuthenticated()){
         echo '<input type="button" value="'.phpCAS::getUser().'"/>';
@@ -68,30 +71,47 @@ require_once('cas_setup.php');
 
 
 
+	<div class='main-header' id="before_search">
+		<img src="images/search-icon-white.png"alt="search_icon">
+		<h2>Search for pictures:</h2>
+	</div>
   <form id="searchbox" action="">
-    <input id="search_pic" type="text" placeholder="Type here">
-    <input id="submit" type="submit" value="Search">
+
+		<input id="search_pic" type="text" placeholder="Type here">
+   	 <input id="submit" type="submit" value="Search">
+
   </form>
 
-
+    
 
 	<!--<h2>Categories:</h2>-->
-  <div class="category">
-    <div class="navigate">
-      <img src="images/international.jpg"/>
-    </div>
-    <div>
-      <img src="images/graduation.jpg" >
-    </div>
-    <div>
-      <img src="images/mtcc.jpg" >
-    </div>
-      <img src="images/sport.jpg" >
-      <img src="images/ramn.jpg" >
-      <img src="images/stuart-lab.jpg">
-  </div>
+  <section class="category">	
+	<div>
+    	<a class="example-image-link" href="images/graduation.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="images/graduation.jpg" alt="" /></a>
+     
+	</div>
+	<div>
+	    <a class="example-image-link" href="images/international.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/international.jpg" alt=""/></a>
+	</div>
+	<div>
+	    <a class="example-image-link" href="images/mtcc.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="images/mtcc.jpg" alt="" /></a>
+	  
+	</div>
+	<div>
+    	<a class="example-image-link" href="images/ramn.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="images/ramn.jpg" alt="" /></a>
+	</div>
+	<div>
+		<a class="example-image-link" href="images/stuart-lab.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="images/stuart-lab.jpg" alt="" /></a>
+    </div> 
+	<div>
+		<a class="example-image-link" href="images/sport.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="images/sport.jpg" alt="" /></a>
+   
+	</div>
+  
 
 
+    </section>
+	
 
   <div id="footer">
   	<nav>
@@ -116,12 +136,12 @@ require_once('cas_setup.php');
 		<p>&copy; Hawkstagram.com<p>
   	</div>
 
-<!--  <script>-->
-<!--    var btn_signin = document.getElementById('sign_in');-->
-<!--    btn_signin.addEventListener('click', function(){-->
-<!--      document.location = 'signin.php';-->
-<!--    });-->
-<!--  </script>-->
-
+<script src="lightbox/lightbox2-master/dist/js/lightbox-plus-jquery.min.js"></script>
+<script>
+	var search_top = document.getElementById('search');
+	search_top.addEventListener('click',function(){
+	document.getElementById('searchbox').scrollIntoView();
+	});
+</script>
 </body>
 </html>

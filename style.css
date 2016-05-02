@@ -138,7 +138,7 @@ span{
 	
 
 }
-#big_signin{
+#big_signin,#submit_upload{
 	width:6em;
 	color: ghostwhite;
 	background-color:red;
@@ -174,7 +174,7 @@ span{
 #before_search h1{
 	font-size: 2em;
 }
-#searchbox,#footer{
+#searchbox{
 
 	display: flex;
 	flex-direction: row;
@@ -187,9 +187,7 @@ span{
 	margin:o auto;
 }
 
-#footer{
-		justify-content: space-around;
-}
+
 #search_pic{
 	font-size:1.5em;
 }
@@ -204,36 +202,34 @@ span{
 
 	
 }
+.footer{
+	background-color:#808080;
+	height:5em;
+}
 /*Upload Page*/
 .image-upload{
 	background-color:#808080 ;	
-	margin:0 auto;
-}
-.image-upload img {
-	max-width: 15%;
-	cursor:pointer;
-}
-#file{
+	padding: 2em;
+	display: flex;
+	flex-direction:column;
 	
-}
-.image-upload  input{
-	position:relative;
-	z-index:2;
-	margin:2em;
+	justify-content:space-around center;
 
 }
-input#file{
-	background-color:red;
+
+#file_name input,#file_name label{
+	display:block;
+	margin:0.5em;
+	border-radius: 0.5em;
+	
+}
+#file_name label{
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: bold;
 	color:ghostwhite;
-	}
-	
-
-.image-upload{
-	padding:1em 2em;
-	display:flex;
-	flex-direction:row;
-	
-
+}
+#file_name input{
+	padding:0.5em;
 }
 .category_buttons{
 	padding: 2em 0;
@@ -243,23 +239,27 @@ input#file{
 	justify-content:space-around;
 	margin:0 auto;
 	background-color:#333;
+	color: ghostwhite;
 }
-.category_buttons button{
+.category_buttons div{
 	width:30%;
 	color: ghostwhite;
     padding: 0.5em;
     margin: 9px 0;
 	min-width: 100px;
-	border-radius: 3px;
-    border: none;
-    cursor: pointer;
+	border-radius: 6px;
+    border: 2px solid ghostwhite;
 	margin-right:0.5em;
-	background-color:#808080 ;
+	text-align:left;
 	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: bold;
 
 	
 }
+.category_buttons input{
+	cursor:pointer;
+}
+
 .container{
 	background-color:#333;
 	color:ghostwhite;
@@ -267,8 +267,33 @@ input#file{
 	text-align: center;
 	
 }
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
 
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline;
+	cursor:pointer;
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	border-radius: 6px;
+	padding:1em;
+	
+}
 
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #333;;
+}
 /*	Media queries*/
 
 @media all and (min-width: 400px) {
@@ -286,5 +311,8 @@ input#file{
 }
 .category div{
 	max-width:30%;
+}
+.image-upload{
+	flex-direction:row;
 }
 }

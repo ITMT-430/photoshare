@@ -24,6 +24,10 @@
     "root", "")
   or die("<p>Error connecting to database: " .
     mysqli_error() . "</p>");
+<<<<<<< HEAD
+=======
+
+>>>>>>> 071712f7a129b1051f7114f1b3368a71ebd018d0
 
   echo "<p>Connected to MySQL!</p>";
 
@@ -70,4 +74,8 @@
 </body>
 </html>
 
+<<<<<<< HEAD
+=======
+?>
+>>>>>>> 071712f7a129b1051f7114f1b3368a71ebd018d0
 

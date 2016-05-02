@@ -34,38 +34,6 @@
     <title>IIT Photoshare Site</title>
 </head>
 <body>
-<!--<div class="main-header" id="banner">
-    <h1 id="hawkstagram"><span>Hawks</span>tagram</h1>
-    <div>
-        <img src="search-icon-white.png" alt="search_icon" id="search">
-        <button id="sign_in" >Sign In</button>
-    </div>
-</div>
-s
-<form action="connect.php" method="POST" enctype="multipart/form-data">
-    <label for="image_ID">Select image to upload:</label>
-    <input type="submit" name="image" id="imageToUpload" size="30"/>
-</form> <br>
-<form>
-    <label >Name: <input type="text" name="fname" /></label>
-</form>
-
-<h2>Categories</h2>
-<button type="button">Graduation</button>
-<button type="button">Sports</button>
-<button type="button">IPRO</button><br>
-<button type="button">Events</button>
-<button type="button">College Life</button>
-<button type="button">Graduation</button><br>
-<button type="button">Graduation</button>
-<button type="button">Graduation</button>
-<button type="button">Graduation</button><br><br>
-<input type="submit" value="Submit"/>
-
-
-
-<h1>Welcome <?php /*echo $login_session; */?></h1>
-<h2><a href = "index.html">Sign Out</a></h2>-->
 
 
 <!DOCTYPE html>
@@ -100,6 +68,7 @@ s
     <div class="container">
         <div id="output"></div>
 
+<<<<<<< HEAD
         <h2>Please choose the Category</h2>
         <?php
             if(is_array($errors)) {
@@ -130,9 +99,35 @@ s
             <li><input type="checkbox" name="categories[]" value="wiser">WISER</li>
 
         </ul>
+=======
+	<h2>Please choose the Category</h2>
+	    <div id="category" class="category_buttons">
+		
+		<div><input type="checkbox" name="categories[]" value="graduation">Graduation</div>
+		<div><input type="checkbox" name="categories[]" value="events">Events</div>
+		<div><input type="checkbox" name="categories[]" value="campus">Campus</div>
+		<div><input type="checkbox" name="categories[]" value="international students">International Students</div>
+		<div><input type="checkbox" name="categories[]" value="sports">Sports</div>
+		<div><input type="checkbox" name="categories[]" value="student life">Student Life</div>
+		<div><input type="checkbox" name="categories[]" value="ipro">IPRO</div>
+		<div><input type="checkbox" name="categories[]" value="engineering">Armour College of Engineering</div>
+		<div><input type="checkbox" name="categories[]" value="kent_law">Chicago-Kent College of Law</div>
+		<div><input type="checkbox" name="categories[]" value="arch">College of Architecture</div>
+		<div><input type="checkbox" name="categories[]" value="arch">College of Science</div>
+		<div><input type="checkbox" name="categories[]" value="design">Institute of Design</div>
+		<div><input type="checkbox" name="categories[]" value="food_safety">Institute for Food Safety and Health</div>
+		<div><input type="checkbox" name="categories[]" value="humanities">Lewis College of Human Sciences</div>
+		<div><input type="checkbox" name="categories[]" value="biomedical">Pritzker Institute of Biomedical Science and Engineering</div>
+		<div><input type="checkbox" name="categories[]" value="sat">School of Applied Technology</div>
+		<div><input type="checkbox" name="categories[]" value="stuart">Stuart School of Business</div>
+		<div><input type="checkbox" name="categories[]" value="wiser">WISER</div>
+		
+>>>>>>> 071712f7a129b1051f7114f1b3368a71ebd018d0
     </div>
-        <button type="submit">SUBMIT</button>
+        <button type="submit" id="submit_upload">SUBMIT</button>
 </form>
+</div>
+
 
 
 
