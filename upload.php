@@ -19,7 +19,7 @@
             foreach($_POST['categories'] as $category) {
                 $image->addTag($category);
             }
-            echo "<script>window.location = \"https://ada040.rice.iit.edu/view.php?photo=$image->image_id\";</script>";
+            echo "<script>window.location = \"http://localhost/photoshare/view.php?photo=$image->image_id\";</script>";
             die();
         }
 }
@@ -49,27 +49,27 @@
     <h1 id="hawkstagram"><span>Hawks</span>tagram</h1>
     <div>
 
-        <img src="images/search-icon-white.png"alt="search_icon" id="search" >
-
+        
+<button id="home" >Home</a></button>
     </div>
 
 </div>
 <form method="post" enctype="multipart/form-data">
-    <div class="image-upload">
-        <label for="file">
-            <img src="images/upload_icon.png"/>
-        </label>
-
-        <input name="image" type="file" class="file-input" id="file" placeholder="Choose the file from your device"/>
-        <input name="image_name">
-    </div>
+   <div class="image-upload">
+	<input type="file" accept="image/*" id="file"  class="inputfile"  data-multiple-caption="{count} files selected" multiple/>
+	<label for="file"><span>Choose a file</span></label>
+	<div id="file_name">
+	<label for="image_name">Enter the name of the file:</label>
+	<input name="image_name" id="image_name">
+	</div>
+	</div>
 
 
     <div class="container">
         <div id="output"></div>
 
 
-        <h2>Please choose the Category</h2>
+        
         <?php
             if(is_array($errors)) {
                 echo '<div id="errors">There was an error in your upload:<ul>';
@@ -77,9 +77,11 @@
                 echo '</ul></div>';
             }
         ?>
-        
-	    <div id="category" class="category_buttons">
 
+
+	<h2>Please choose the Category</h2>
+	    <div id="category" class="category_buttons">
+		
 		<div><input type="checkbox" name="categories[]" value="graduation">Graduation</div>
 		<div><input type="checkbox" name="categories[]" value="events">Events</div>
 		<div><input type="checkbox" name="categories[]" value="campus">Campus</div>
@@ -98,7 +100,7 @@
 		<div><input type="checkbox" name="categories[]" value="sat">School of Applied Technology</div>
 		<div><input type="checkbox" name="categories[]" value="stuart">Stuart School of Business</div>
 		<div><input type="checkbox" name="categories[]" value="wiser">WISER</div>
-
+		
 
     </div>
         <button type="submit" id="submit_upload">SUBMIT</button>
@@ -106,6 +108,10 @@
 </div>
 
 
+<div class="footer">
+
+
+</div>
 
 
 
@@ -140,6 +146,27 @@
 
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
 
+
+		var inputs = document.querySelectorAll( '.inputfile' );
+Array.prototype.forEach.call( inputs, function( input )
+{
+	var label	 = input.nextElementSibling,
+		labelVal = label.innerHTML;
+
+	input.addEventListener( 'change', function( e )
+	{
+		var fileName = '';
+		if( this.files && this.files.length > 1 )
+			fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+		else
+			fileName = e.target.value.split( '\\' ).pop();
+
+		if( fileName )
+			label.querySelector( 'span' ).innerHTML = fileName;
+		else
+			label.innerHTML = labelVal;
+	});
+});
 
 </script>
 </body>
