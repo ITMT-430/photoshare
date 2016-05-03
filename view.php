@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<title>IIT Photoshare Site</title>
+</head>
+<body>
+  <div class="main-header" id="banner">
+		<h1 id="hawkstagram"><span>Hawks</span>tagram</h1>
+	
+		<button id="home"onclick="location.href='index.php';" >Home</button> 
+
+
+
 <?php
 require_once('cas_setup.php');
 require_once('config.php');
@@ -15,6 +32,7 @@ $image->image_id = intval($_GET['photo']);
 $image->get();
 //#TODO throw error if photo id doesn't point to real photo
 ?>
+	<div class="container">
 <h1><?php echo $image->name; ?></h1>
 <img src="<?php echo $image->getURL() ?>"/>
 <?php
@@ -25,9 +43,13 @@ if(phpCAS::isAuthenticated() && phpCAS::getUser() == $image->uid) {
     <input type="hidden" name="image_id" value="'.$_GET['photo'].'"/></form>';
 }
 
-echo '<ul id="tags">';
+echo '<div id="tags">';
 foreach($image->tags as $tag) {
-    echo "<li>$tag->category</li>";
+    echo "<div>$tag->category</divS>";
 }
-echo '</ul>';
+echo '</div>';
 ?>
+
+</div>
+</body>
+</html>
