@@ -13,7 +13,7 @@
 	
 		<button id="home"onclick="location.href='index.php';" >Home</button> 
 
-
+</div>
 
 <?php
 require_once('cas_setup.php');

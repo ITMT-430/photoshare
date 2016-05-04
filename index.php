@@ -16,6 +16,12 @@ require_once('cas_setup.php');
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="lightbox/lightbox2-master/dist/css/lightbox.min.css">
 	<title>IIT Photoshare Site</title>
+	<style>
+
+	a{
+	font-size:3em;
+	color:red;}
+</style>
 </head>
 
 <body>
@@ -23,8 +29,7 @@ require_once('cas_setup.php');
 	<div class="main-header" id="banner">
 		<h1 id="hawkstagram"><span>Hawks</span>tagram</h1>
 		<div>
-      <img src="images/search-icon-white.png" alt="search_icon" id="search" />
-
+    
       <?php
       if(phpCAS::isAuthenticated()){
         echo '<input type="button" value="'.phpCAS::getUser().'"/>';
@@ -67,47 +72,47 @@ require_once('cas_setup.php');
 
 
 
-	<div class='main-header' id="before_search">
-		<img src="images/search-icon-white.png"alt="search_icon">
-		<h2>Search for pictures:</h2>
-	</div>
+
+
+
+
   <form id="searchbox" action="">
 
-		<input id="search_pic" type="text" placeholder="Type here">
-   	 <input id="submit" type="submit" value="Search">
+
+   	 <button><a href = "search.php"> Search Photos  </a></button>>
 
   </form>
 
-
+    
 
 	<!--<h2>Categories:</h2>-->
-  <section class="category">
+  <section class="category">	
 	<div>
     	<a class="example-image-link" href="images/graduation.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="images/graduation.jpg" alt="" /></a>
-
+     
 	</div>
 	<div>
 	    <a class="example-image-link" href="images/international.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/international.jpg" alt=""/></a>
 	</div>
 	<div>
 	    <a class="example-image-link" href="images/mtcc.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="images/mtcc.jpg" alt="" /></a>
-
+	  
 	</div>
 	<div>
     	<a class="example-image-link" href="images/ramn.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="images/ramn.jpg" alt="" /></a>
 	</div>
 	<div>
 		<a class="example-image-link" href="images/stuart-lab.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="images/stuart-lab.jpg" alt="" /></a>
-    </div>
+    </div> 
 	<div>
 		<a class="example-image-link" href="images/sport.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="images/sport.jpg" alt="" /></a>
-
+   
 	</div>
-
+  
 
 
     </section>
-
+	
 
   <div id="footer">
   	<nav>
